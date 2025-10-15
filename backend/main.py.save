@@ -1,0 +1,9 @@
+cat > requirements.txt << EOF
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+opencv-python==4.8.1.78
+numpy==1.26.2
+ultralytics==8.0.228
+python-multipart==0.0.6
+EOF
+
