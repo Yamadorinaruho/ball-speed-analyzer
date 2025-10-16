@@ -8,9 +8,13 @@ import tempfile
 import os
 from pathlib import Path
 import math
+import torch
+from ultralytics.nn.tasks import DetectionModel
+
+# PyTorch 2.6のweights_only対策
+torch.serialization.add_safe_globals([DetectionModel])
 
 app = FastAPI()
-
 # CORS設定
 allowed_origins = os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")
 app.add_middleware(
